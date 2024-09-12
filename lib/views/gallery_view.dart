@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galleryx/widgets/image_card.dart';
 import 'package:get/get.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -19,7 +18,7 @@ class GalleryView extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+            padding: const EdgeInsets.all(10),
             child: TextField(
               onChanged: (value) {
                 imageController.query = value;
@@ -42,11 +41,11 @@ class GalleryView extends StatelessWidget {
                   return true;
                 },
                 child: GridView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: _calculateCrossAxisCount(context),
-                    crossAxisSpacing: 10.w,
-                    mainAxisSpacing: 10.h,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
                   ),
                   itemCount: imageController.isLoading
                       ? 10

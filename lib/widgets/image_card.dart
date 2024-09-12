@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galleryx/models/image_model.dart';
 import 'package:galleryx/views/full_image_view.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,7 +22,7 @@ class ImageCard extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.r),
+            borderRadius: BorderRadius.circular(10),
             color: Colors.grey.shade200,
             boxShadow: const [
               BoxShadow(
@@ -33,9 +32,9 @@ class ImageCard extends StatelessWidget {
           children: [
             Expanded(
               child: ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10.r),
-                  topRight: Radius.circular(10.r),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
                 ),
                 child: Hero(
                   tag: image?.id ?? 'imageId',
@@ -55,22 +54,22 @@ class ImageCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.thumb_up_sharp,
-                        size: 14.sp,
+                        size: 14,
                         color: Colors.black87,
                       ),
-                      SizedBox(width: 5.w),
+                      const SizedBox(width: 5),
                       Text(
                         '${image?.likes ?? 0}',
                         style: GoogleFonts.poppins(
-                            fontSize: 12.sp,
+                            fontSize: 12,
                             color: Colors.black87,
                             fontWeight: FontWeight.w600),
                       ),
@@ -78,16 +77,16 @@ class ImageCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.remove_red_eye_sharp,
-                        size: 14.sp,
+                        size: 14,
                         color: Colors.black87,
                       ),
-                      SizedBox(width: 5.w),
+                      const SizedBox(width: 5),
                       Text(
                         '${image?.views ?? 0}',
                         style: GoogleFonts.poppins(
-                            fontSize: 12.sp,
+                            fontSize: 12,
                             color: Colors.black87,
                             fontWeight: FontWeight.w600),
                       ),
